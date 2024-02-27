@@ -1,0 +1,255 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="en">
+	<!--begin::Head-->
+	<head><base href="../../"/>
+		<title>Social AI</title>
+		<meta charset="utf-8" />
+		<meta name="description" content="IPAMAS AI - Bootstrap 5 HTML Multipurpose Admin Dashboard Theme" />
+		<meta name="keywords" content="Saul, bootstrap, bootstrap 5, dmin themes, free admin themes, bootstrap admin, bootstrap dashboard" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta property="og:locale" content="en_US" />
+		<meta property="og:type" content="article" />
+		<meta property="og:title" content="IPAMAS AI - Bootstrap 5 HTML Multipurpose Admin Dashboard Theme" />
+		<meta property="og:url" content="https://keenthemes.com/products/saul-html-pro" />
+		<meta property="og:site_name" content="Keenthemes | IPAMAS AI" />
+		<link rel="canonical" href="https://preview.keenthemes.com/saul-html-free" />
+		<link rel="shortcut icon" href={% static "assets/media/logos/favicon.ico" %} />
+		<!--begin::Fonts(mandatory for all pages)-->
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700" />
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+		<!--end::Fonts-->
+		<!--begin::Global Stylesheets Bundle(mandatory for all pages)-->
+		<link href={% static "assets/plugins/global/plugins.bundle.css" %} rel="stylesheet" type="text/css" />
+		<link href={% static "assets/css/style.bundle.css"  %} rel="stylesheet" type="text/css" />
+		<!--end::Global Stylesheets Bundle-->
+		<script>// Frame-busting to prevent site from being loaded within a frame without permission (click-jacking) if (window.top != window.self) { window.top.location.replace(window.self.location.href); }</script>
+	</head>
+	
+	<!--end::Head-->
+	<!--begin::Body-->
+	<body id="kt_body" class="app-blank">
+		<!--begin::Theme mode setup on page load-->
+		<script>var defaultThemeMode = "light"; var themeMode; if ( document.documentElement ) { if ( document.documentElement.hasAttribute("data-bs-theme-mode")) { themeMode = document.documentElement.getAttribute("data-bs-theme-mode"); } else { if ( localStorage.getItem("data-bs-theme") !== null ) { themeMode = localStorage.getItem("data-bs-theme"); } else { themeMode = defaultThemeMode; } } if (themeMode === "system") { themeMode = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"; } document.documentElement.setAttribute("data-bs-theme", themeMode); }</script>
+		<!--end::Theme mode setup on page load-->
+		<!--begin::Root-->
+		<div class="d-flex flex-column flex-root" id="kt_app_root">
+			<!--begin::Authentication - Sign-in -->
+			<div class="d-flex flex-column flex-lg-row flex-column-fluid">
+				<!--begin::Aside-->
+				<div class="d-flex flex-column flex-lg-row-auto b-c-g w-xl-600px positon-xl-relative">
+					<!--begin::Wrapper-->
+					<div class="d-flex flex-column position-xl-fixed top-0 bottom-0 w-xl-600px ">
+						<!--begin::Header-->
+						<div class="d-flex flex-row-fluid flex-column text-center">
+							<div class="welcom">
+								<div class="wetitle">
+							<!--begin::Title-->
+							<h1 class="d-none d-lg-block fw-bold text-white fs-2qx pb-5 pb-md-2">Welcome to Social AI</h1>
+							<!--end::Title-->
+							<!--begin::Description-->
+							<p class="d-none d-lg-block fw-semibold fs-2 text-white">Social media refers to online platforms and tools that enable people to create, share, and exchange information, ideas, and multimedia content in virtual communities and networks. These platforms allow users to connect with friends, family, colleagues, and even strangers across the globe, facilitating communication, networking, and collaboration.
+							<br /></p>
+							<!--end::Description-->
+						</div>
+						</div>
+						</div>
+						<!--end::Header-->
+						<!--begin::Illustration-->
+						<div class="d-none d-lg-block d-flex flex-row-auto bgi-no-repeat bgi-position-x-center bgi-size-contain bgi-position-y-bottom min-h-100px min-h-lg-350px" style="background-image: url(assets/media/illustrations/sketchy-1/17.png)"></div>
+						<!--end::Illustration-->
+					</div>
+					<!--end::Wrapper-->
+				</div>
+				<!--begin::Aside-->
+				<!--begin::Body-->
+				<div class="d-flex flex-column flex-lg-row-fluid py-10">
+					<!--begin::Content-->
+					<div class="d-flex flex-center flex-column flex-column-fluid">
+						<!--begin::Wrapper-->
+						<div class="w-lg-500px p-10 p-lg-15 mx-auto">
+							<!--begin::Form-->
+							<form class="form w-100" id="loginForm" method="POST">
+								{% csrf_token %}
+								<!--begin::Heading-->
+								<div class="text-center mb-10">
+									<!--begin::Title-->
+									<h1 class="text-dark mb-3">Sign In to Social AI</h1>
+									<!--end::Title-->
+									<!--begin::Link-->
+									<div class="text-gray-400 fw-semibold fs-4">New Here?
+									<a href="{% url 'signup' %}" class="link-primary fw-bold">Create an Account</a></div>
+									<!--end::Link-->
+								</div>
+								<!--begin::Heading-->
+								<!--begin::Input group-->
+								<div class="fv-row mb-10">
+									<!--begin::Label-->
+									<label class="form-label fs-6 fw-bold text-dark">Username</label>
+									<!--end::Label-->
+									<!--begin::Input-->
+									<input class="form-control form-control-lg form-control-solid" type="text" name="username" />
+									<span class="validation-message" id="usernameValidation"></span>
+									<!--end::Input-->
+								</div>
+								<!--end::Input group-->
+								<!--begin::Input group-->
+								<div class="fv-row mb-10">
+									<!--begin::Wrapper-->
+									<div class="d-flex flex-stack mb-2">
+										<!--begin::Label-->
+										<label class="form-label fw-bold text-dark fs-6 mb-0">Password</label>
+										<!--end::Label-->
+										<!--begin::Link-->
+										<!--begin::Link-->
+										<a href="{% url 'password_reset' %}" class="link-primary fs-6 fw-bold">Forgot Password ?</a>
+										<!--end::Link-->
+										<!--end::Link-->
+									</div>
+									<!--end::Wrapper-->
+									<!--begin::Input-->
+									<input class="form-control form-control-lg form-control-solid" type="password" name="password" />
+									<span class="validation-message" id="passwordValidation"></span>
+									<!--end::Input-->
+								</div>
+								<!--end::Input group-->
+								<!--begin::Actions-->
+								<div class="text-center">
+									<!--begin::Submit button-->
+									<button type="button"  id="submitBtn"  class="fw-bold btn btn-lg btn-primary w-100 mb-5">
+										<span class="indicator-label">Continue</span>
+										<span class="indicator-progress">Please wait...
+										<span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
+									</button>
+									<!--end::Submit button-->
+									
+								</div>
+								<!--end::Actions-->
+							</form>
+							<!--end::Form-->
+						</div>
+						<!--end::Wrapper-->
+					</div>
+					<!--end::Content-->
+					<!--begin::Footer-->
+				
+					<!--end::Footer-->
+				</div>
+				<!--end::Body-->
+			</div>
+			<!--end::Authentication - Sign-in-->
+		</div>
+		<!--end::Root-->
+		<!--begin::Javascript-->
+		<script>var hostUrl = "assets/";</script>
+		<!--begin::Global Javascript Bundle(mandatory for all pages)-->
+		<script src={% static "assets/plugins/global/plugins.bundle.js" %}></script>
+		<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+		<script src={% static "assets/js/scripts.bundle.js" %}></script>
+		<script>
+       $(document).ready(function () {
+        $("#submitBtn").click(function () {
+            // Clear previous validation messages
+            $(".validation-message").text("");
+		
+            // Perform client-side validation
+            var username = $("input[name='username']").val();
+            var password = $("input[name='password']").val();
+            var errors = [];
+
+            if (!username) {
+                errors.push("Username is required");
+                $("#usernameValidation").text("Username is required");
+            }
+
+            if (!password) {
+                errors.push("Password is required");
+                $("#passwordValidation").text("Password is required");
+            }
+
+			if (!password.length > 7) {
+                errors.push("Password should  be more than 8 characters");
+                $("#passwordValidation").text("Password should  be more than 8 characters");
+            }
+			
+		
+
+            // Stop form submission if there are errors
+            if (errors.length > 0) {
+				Swal.fire({
+                            icon: 'error',
+                            title: 'Sorry,looks like there are some errors detected, please try again!',
+							showConfirmButton: true,
+                            confirmButtonText: 'OK,got it!',
+                        });
+                return;
+            }
+
+            // Get form data
+            var formData = $("#loginForm").serialize();
+            var csrfToken = $("[name=csrfmiddlewaretoken]").val();
+
+            // Ajax request
+            $.ajax({
+                type: "POST",
+                url: "https://ddivesocial.com/login/", // Replace with your server endpoint
+                data: formData,
+                headers: {
+                    "X-CSRFToken": csrfToken
+                },
+                success: function (response) {
+					console.log(response)
+                    // Check if the API response is true
+                    if (response == "Login successful") {
+                        // Show a SweetAlert success popup
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Login Successful!',
+                            showConfirmButton: false,
+                            timer: 1500
+                        });
+
+                        // Optionally, you can redirect the user or perform other actions
+                        setTimeout(() => {
+                            window.location.href = "/"; // Example: Redirect to the dashboard
+                        }, 1500);
+                    }
+                },
+				error: function (error) {
+					Swal.fire({
+                            icon: 'error',
+                            title: 'Invalid username or password. Please try again.',
+                            showConfirmButton: false,
+                            timer: 1500
+                        });
+    }
+				
+            });
+        });
+
+		
+
+        // Clear validation messages on input
+        $("input[name='username']").on('input', function () {
+            $("#usernameValidation").text("");
+        });
+
+        $("input[name='password']").on('input', function () {
+            $("#passwordValidation").text("");
+        });
+    });
+</script>
+
+
+
+
+
+		<!--end::Global Javascript Bundle-->
+		<!--begin::Custom Javascript(used for this page only)-->
+		<script src={% static "assets/js/custom/authentication/sign-in/general.js" %}></script>
+		<!--end::Custom Javascript-->
+		<!--end::Javascript-->
+	</body>
+	<!--end::Body-->
+</html>

@@ -1,0 +1,44 @@
+{% extends "base.html" %} {% load static %} {% block content %} {% block css %}
+{% endblock %}
+
+<script>
+  var defaultThemeMode = "light";
+  var themeMode;
+  if (document.documentElement) {
+    if (document.documentElement.hasAttribute("data-bs-theme-mode")) {
+      themeMode = document.documentElement.getAttribute("data-bs-theme-mode");
+    } else {
+      if (localStorage.getItem("data-bs-theme") !== null) {
+        themeMode = localStorage.getItem("data-bs-theme");
+      } else {
+        themeMode = defaultThemeMode;
+      }
+    }
+    if (themeMode === "system") {
+      themeMode = window.matchMedia("(prefers-color-scheme: dark)").matches
+        ? "dark"
+        : "light";
+    }
+    document.documentElement.setAttribute("data-bs-theme", themeMode);
+  }
+</script>
+
+<div class="py-20 main-home-content">
+  <div class="container mx-auto px-6">
+    <h2 class="text-4xl font-bold mb-2" style="color: #2ec9eb">Social Media</h2>
+    <h3 class="home-content-data">
+      Social media refers to online platforms and tools that enable people to
+      create, share, and exchange information, ideas, and multimedia content in
+      virtual communities and networks. These platforms allow users to connect
+      with friends, family, colleagues, and even strangers across the globe,
+      facilitating communication, networking, and collaboration.
+    </h3>
+    <button
+      class="read-more-btn-section"
+    >
+      Read More
+    </button>
+  </div>
+</div>
+
+{% endblock %}
